@@ -64,8 +64,8 @@ def get_cv2_image_from_base64_string(b64str):
     return img
 
 def get_cropped_image_if_2_eyes(image_path, image_base64_data):
-    face_cascade = cv2.CascadeClassifier('/Users/muhammadfaizanraza/Desktop/DS Projects/Sports celebs classification/model/opencv/haarcascades/haarcascade_frontalface_default.xml')
-    eye_cascade = cv2.CascadeClassifier('/Users/muhammadfaizanraza/Desktop/DS Projects/Sports celebs classification/model/opencv/haarcascades/haarcascade_eye.xml')
+    face_cascade = cv2.CascadeClassifier('model/opencv/haarcascades/haarcascade_frontalface_default.xml')
+    eye_cascade = cv2.CascadeClassifier('model/opencv/haarcascades/haarcascade_eye.xml')
 
     if image_path:
         img = cv2.imread(image_path)
@@ -85,7 +85,7 @@ def get_cropped_image_if_2_eyes(image_path, image_base64_data):
     return cropped_faces
 
 def get_b64_test_image_for_virat():
-    with open("b64.txt.rtf") as f:
+    with open("server/b64.txt.rtf") as f:
         return f.read()
 
 if __name__ == '__main__':
